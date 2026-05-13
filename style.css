@@ -1,0 +1,213 @@
+ /* grimsi arka plan */
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef2f7;
+  color: #1f2937;
+}
+
+ /* navbardaki alt cizgi */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #d8dee8;
+}
+
+/* logomsu mavi kare kutucuk */
+.brand-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.page-area {
+  padding: 40px 15px;
+}
+
+/* sag taraftaki ana uygulamanın kart tasarimi */
+.main-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #d8dee8;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  padding: 26px;
+}
+
+/* sol taraftaki bilgi karti, main-card ile ayni hizada dursun diye height: 100% verildi */
+.intro-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #d8dee8;
+  padding: 26px;
+  height: 100%;
+}
+
+.intro-card h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.intro-card p {
+  color: #5b6575;
+  line-height: 1.6;
+}
+
+.feature-item {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  color: #374151;
+}
+
+.feature-item i {
+  color: #2563eb;
+  font-size: 1.2rem;
+}
+
+/* sifre alani position: relative yapildi, icindeki goz butonu duzgun hizalansin diye */
+.password-wrapper {
+  position: relative;
+}
+
+/* input kutusunun sagindan bosluk birakildi, goz butonu yazinin ustune binmesin diye */
+.password-input {
+  height: 52px;
+  border-radius: 12px;
+  padding-right: 48px; 
+}
+
+/* goz butonu, absolute sayesinde input'un icine yerlestirmis gibi gorunur */
+.show-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4b5563;
+}
+
+/* puanın gosterildigi gri cerceveli alan */
+.score-box {
+  margin-top: 22px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+/* buyuk puan yazisi */
+.score-number {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.strength-text {
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* puan dolum cubugunun koselere yuvarlama islemi yapildi */
+.progress {
+  height: 12px;
+  border-radius: 20px;
+  margin-top: 12px;
+}
+
+/* alti tane kural kutsu 2 sutun halinde dizilsin diye css grid kullanildi */
+.rules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* kural saglanmazsa gorulen gri hal*/
+.rule {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+}
+
+/* js kural saglandi derse bu class eklenecek ve yesil olacak */
+.rule.ok {
+  border-color: #86efac;
+  background: #f0fdf4;
+  color: #166534;
+  font-weight: 600;
+}
+
+/* tavsiyelerin yazildigi mavi kutu */
+.suggestion-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 14px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  line-height: 1.55;
+}
+
+.small-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.info-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+/* uretilen sifrenin gorundugu yer */
+.generated-password {
+  min-height: 46px;
+  padding: 12px;
+  border: 1px dashed #93c5fd;
+  border-radius: 12px;
+  background: #f8fafc;
+  word-break: break-all;
+  font-family: Consolas, monospace; 
+  color: #1d4ed8;
+}
+
+.footer-text {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 25px;
+}
+
+/* mobil uyumluluk (responsive) kismi, telefondan girilince sutunlar tekli olur */
+@media (max-width: 768px) {
+  .intro-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .rules {
+    grid-template-columns: 1fr; /* mobilde kurallar alt alta dizilsin */
+  }
+
+  .main-card,
+  .intro-card {
+    padding: 20px;
+  }
+}
